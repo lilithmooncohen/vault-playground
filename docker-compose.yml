@@ -20,13 +20,3 @@ services:
      - "8200:8200"
     depends_on:
       - consul
-
-
-#  vault:
-#    image: vault:0.7.0
-#    cap_add:
-#      - IPC_LOCK
-#    environment:
-#      VAULT_LOCAL_CONFIG: '{"backend": {"file": {"path": "/vault/file"}}, "default_lease_ttl": "24h", "max_lease_ttl": "720h"}'
-#    depends_on:
-#      - consul
