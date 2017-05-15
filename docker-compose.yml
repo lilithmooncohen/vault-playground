@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+
+  consul:
+    image: consul:0.8.3
+    command: "agent -dev -client 0.0.0.0 -ui"
+    ports: 
+      - "8500:8500"
+  
+  vault:
+    image: vault:0.7.0
+    cap_add:
+      - IPC_LOCK
+    environment:
+      VAULT_LOCAL_CONFIG: '{"backend": {"consul": {"address": "consul:8500", "path": "vault"}}, "listener": {"tcp": {"address": "0.0.0.0:8200", "tls_disable": "1"}}, "default_lease_ttl": "24h", "max_lease_ttl": "720h"}'
+      VAULT_ADDR: "http://127.0.0.1:8200"
+    command: server
+    ports:
+     - "8200:8200"
+    depends_on:
+      - consul
+
+
+#  vault:
+#    image: vault:0.7.0
+#    cap_add:
+#      - IPC_LOCK
+#    environment:
+#      VAULT_LOCAL_CONFIG: '{"backend": {"file": {"path": "/vault/file"}}, "default_lease_ttl": "24h", "max_lease_ttl": "720h"}'
+#    depends_on:
+#      - consul

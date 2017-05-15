@@ -1,0 +1,14 @@
+Unseal Key 1: c8iID5pPbjlhk3MBh31y4tJXhfFOWthY37cfkPmPWdwB
+Unseal Key 2: ucAurdMDZO/wLvVKtpcCV8sgPSnvbtmj4wjSb1eJzJAC
+Unseal Key 3: 3yfTyWGk6I61zS/NOowU7naU7NpflWh/DV9BvizmqxgD
+Unseal Key 4: zQIdxOPr1+L09vBMpK6bzAWI6yFvrBvs2iind7/YMdYE
+Unseal Key 5: q+XgoFFMW4OxFSrLKLWNdbg8OtLfV6owNH80psS3Vl4F
+Initial Root Token: 1af4f802-7147-63bc-a490-30b0b59c77f9
+
+Vault initialized with 5 keys and a key threshold of 3. Please
+securely distribute the above keys. When the Vault is re-sealed,
+restarted, or stopped, you must provide at least 3 of these keys
+to unseal it again.
+
+Vault does not store the master key. Without at least 3 keys,
+your Vault will remain permanently sealed.
